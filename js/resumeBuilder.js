@@ -14,7 +14,7 @@ var bio = {
     },
     "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur.",
     "skills": ["HTML", "CSS", "JavaScript", "PhotoShop", "Git"],
-    "bioPic": "images/me.jpg"
+    "biopic": "images/me.jpg"
 };
 bio.display = function() {
     //Display my name and role
@@ -22,18 +22,13 @@ bio.display = function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
     $('#header').prepend(formattedRole);
     $('#header').prepend(formattedName);
-    //Display the contact information on the top
-    $('#topContacts').append(HTMLmobile.replace('%data%', bio.contacts.mobile));
-    $('#topContacts').append(HTMLemail.replace('%data%', bio.contacts.email));
-    $('#topContacts').append(HTMLgithub.replace('%data%', bio.contacts.github));
-    $('#topContacts').append(HTMLlocation.replace('%data%', bio.contacts.location));
-    //Display the contact information in the footer
-    $('#footerContacts').append(HTMLmobile.replace('%data%', bio.contacts.mobile));
-    $('#footerContacts').append(HTMLemail.replace('%data%', bio.contacts.email));
-    $('#footerContacts').append(HTMLgithub.replace('%data%', bio.contacts.github));
-    $('#footerContacts').append(HTMLlocation.replace('%data%', bio.contacts.location));
+    //Display the contact information on the top and in the footer
+    $('#topContacts, #footerContacts').append(HTMLmobile.replace('%data%', bio.contacts.mobile));
+    $('#topContacts, #footerContacts').append(HTMLemail.replace('%data%', bio.contacts.email));
+    $('#topContacts, #footerContacts').append(HTMLgithub.replace('%data%', bio.contacts.github));
+    $('#topContacts, #footerContacts').append(HTMLlocation.replace('%data%', bio.contacts.location));
     //Display the bio picture and welcome message
-    $('#header').append(HTMLbioPic.replace('%data%', bio.bioPic));
+    $('#header').append(HTMLbioPic.replace('%data%', bio.biopic));
     $('#header').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
     //Display the skills
     if (bio.skills.length > 0) {
