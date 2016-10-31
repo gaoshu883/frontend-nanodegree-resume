@@ -1,3 +1,5 @@
+# Get a livepage
+You can check the [link](https://rawgit.com/gaoshu883/frontend-nanodegree-resume/master/index.html) to see how the resume looks like.
 # Project Details
 ## How do I complete this project?
 Review the Online Resume [Project Rubric](https://review.udacity.com/?_ga=1.189245867.12280332.1465333852#!/projects/2962818615/rubric).
