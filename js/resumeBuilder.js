@@ -149,7 +149,7 @@ var projects = {
         "title": "A Portfolio Site",
         "dates": "2016",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget neque nec magna eleifend rutrum a quis urna. Donec sodales lectus quis libero rhoncus, id lacinia nibh pulvinar. Vivamus laoreet et justo at aliquet. Donec neque sem, placerat nec ante.",
-        "images": ["images/Portfolio-site.jpg"],
+        "images": ["images/portfolio-site.jpg"],
         "url": "https://github.com/gaoshu883/a-portfolio-site"
     }]
 };
