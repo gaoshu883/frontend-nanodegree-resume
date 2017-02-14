@@ -7,6 +7,7 @@ Don't worry, you'll learn what's going on in this file throughout the course. Yo
 Cameron Pittman
 */
 
+// 这里可以全部看做view层，没有和model直接通信，而是通过octopus
 
 /*
 These are HTML strings. As part of the course, you'll be using JavaScript functions
@@ -65,10 +66,10 @@ The Internationalize Names challenge found in the lesson Flow Control from JavaS
 $(document).ready(function() {
     $('button').click(function() {
         var $name = $('#name');
-        var iName = inName($name.text()) || function() {};
+        var iName = view.inName($name.text()) || function() {};
         //If the curent name is the internationalize name, then switch to bio name.
         if (iName === $name.text()) {
-            $name.html(bio.name);
+            $name.html(octopus.getBio().name);
             $('button').text('Internationalize');
         } else {
             $name.html(iName);
@@ -133,6 +134,10 @@ function initializeMap() {
 
         // initializes an empty array
         var locations = [];
+
+        var bio = octopus.getBio();
+        var education = octopus.getEducation();
+        var work = octopus.getWork();
 
         // adds the single location property from bio to the locations array
         locations.push(bio.contacts.location);
