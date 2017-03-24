@@ -17,8 +17,8 @@ var model = {
             "github": "https://github.com/gaoshu883",
             "location": "Zhenjiang, Jiangsu"
         },
-        "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur.",
-        "skills": ["HTML", "CSS", "JavaScript", "PhotoShop", "Git"],
+        "welcomeMessage": "Hello, here is my resume!",
+        "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Knockoutjs", "Git", "PhotoShop"],
         "biopic": "images/me.jpg"
     },
     education: {
@@ -27,7 +27,7 @@ var model = {
             "location": "Zhenjiang, Jiangsu, China",
             "degree": "Masters",
             "majors": ["Materials Science and Engineering"],
-            "dates": "2014-Future",
+            "dates": "2014-2017",
             "url": "http://www.ujs.edu.cn/site1/"
         }, {
             "name": "Jiangsu University",
@@ -62,6 +62,31 @@ var model = {
             "school": "Udacity",
             "dates": "2016",
             "url": "https://cn.udacity.com/course/responsive-web-design-fundamentals--ud893"
+        }, {
+            "title": "HTML5 Canvas",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://cn.udacity.com/course/html5-canvas--ud292/"
+        }, {
+            "title": "Object-Oriented JavaScript",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://cn.udacity.com/course/object-oriented-javascript--ud015/"
+        }, {
+            "title": "Intro to AJAX",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://cn.udacity.com/course/intro-to-ajax--ud110/"
+        }, {
+            "title": "Website Performance Optimization",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://cn.udacity.com/course/website-performance-optimization--ud884/"
+        }, {
+            "title": "JavaScript Design Patterns",
+            "school": "Udacity",
+            "dates": "2016",
+            "url": "https://cn.udacity.com/course/javascript-design-patterns--ud989/"
         }]
     },
     work: {
@@ -77,7 +102,7 @@ var model = {
         "projects": [{
             "title": "A Portfolio Site",
             "dates": "2016",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget neque nec magna eleifend rutrum a quis urna. Donec sodales lectus quis libero rhoncus, id lacinia nibh pulvinar. Vivamus laoreet et justo at aliquet. Donec neque sem, placerat nec ante.",
+            "description": "This is my personal portfolio website. It displays my featured work created during my studying for Front-end Web Develper Nanodegree in Udacity.",
             "images": ["images/portfolio-site.jpg"],
             "url": "https://github.com/gaoshu883/a-portfolio-site"
         }]
@@ -183,12 +208,11 @@ var view = {
         $('#education').append(HTMLonlineClasses);
         for (var m = 0; m < this.education.onlineCourses.length; m++) {
             $('#education').append(HTMLschoolStart);
-            var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', this.education.onlineCourses[m].title);
+            var formattedOnlineTitle = HTMLonlineTitle.replace('%data%', this.education.onlineCourses[m].title).replace('#', this.education.onlineCourses[m].url);
             var formattedOnlineSchool = HTMLonlineSchool.replace('%data%', this.education.onlineCourses[m].school);
             var formattedTitleAndSchool = formattedOnlineTitle + formattedOnlineSchool;
             $('.education-entry:last').append(formattedTitleAndSchool);
             $('.education-entry:last').append(HTMLonlineDates.replace('%data%', this.education.onlineCourses[m].dates));
-            $('.education-entry:last').append(HTMLonlineURL.replace('#', this.education.onlineCourses[m].url));
         }
     },
     workRender: function() {
